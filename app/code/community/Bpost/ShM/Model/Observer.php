@@ -246,6 +246,9 @@ class Bpost_ShM_Model_Observer extends Varien_Event_Observer
         $checkoutSession = Mage::getSingleton('checkout/session');
         $quote = $checkoutSession->getQuote();
 
+        $this->controller_action_postdispatch_checkout_onepage_saveAddress($observer);
+        $this->checkout_controller_onepage_save_shipping_method();
+
         if (strpos($quote->getShippingAddress()->getShippingMethod(), "bpostshm_bpost") !== false) {
             $order = $observer->getEvent()->getOrder();
 

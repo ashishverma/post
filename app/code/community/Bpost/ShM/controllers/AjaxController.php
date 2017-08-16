@@ -61,6 +61,11 @@ class Bpost_ShM_AjaxController extends Mage_Core_Controller_Front_Action {
             $type = isset($params["type"]) && is_numeric($params["type"]) ? $params["type"] : false;
             $spots = isset($params["spots"]) ? json_decode($params["spots"]) : false;
 
+            if($id){
+                $quote = Mage::getSingleton('checkout/session')->getQuote();
+                $quote->getShippingAddress()->setData('bpost_pickuplocation_id',$id);
+            }
+
             if($id && $type) {
                 $apiCall = Mage::helper('bpost_shm')->getBpostOpeningHours($id, $type);
 

@@ -113,6 +113,22 @@ class Bpost_ShM_Model_Api extends Bpost_ShM_Model_Api_Abstract
             $headers = array("Content-Type:application/vnd.bpost.shm-labelRequest-v3+XML","Accept:application/vnd.bpost.shm-label-image-v3+XML");
         }
 
+        if($orderObject->getShipping_method() == "bpostshm_bpost_pickuppoint" || $orderObject->getShipping_method() == "bpostshm_bpost_parcellocker"):
+          $quote_collection = Mage::getModel('sales/quote')->getCollection()->addFieldToFilter('bpost_pickuplocation_id', $orderObject->getbpost_pickuplocation_id());
+            foreach($quote_collection as $key => $quote){
+                $shipping = $quote->getShippingAddress();
+                $street = $shipping->getStreet();
+                if($shipping->getFirstname()!=""){
+                    $orderObject->getShippingAddress()->setData('firstname', $shipping->getFirstname());
+                    $orderObject->getShippingAddress()->setData('lastname', $shipping->getLastname());
+                    $orderObject->getShippingAddress()->setData('street', $street[0]);
+                    $orderObject->getShippingAddress()->setData('city', $shipping->getCity());
+                    $orderObject->getShippingAddress()->setData('postcode', $shipping->getPostcode());
+                    break;
+                }
+            }
+        endif;
+
         $configHelper =  Mage::helper("bpost_shm/system_config");
 
         if($orderObject){

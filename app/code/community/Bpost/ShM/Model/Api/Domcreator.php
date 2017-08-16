@@ -57,6 +57,17 @@ class Bpost_ShM_Model_Api_Domcreator extends Bpost_ShM_Model_Api_Abstract
                 //we force shipping to 'bpostshm_bpost_homedelivery' method because we are creating a return order
                 $shippingMethod = "bpostshm_bpost_homedelivery";
             }
+        }else{
+            //if($shippingMethod != "bpostshm_bpost_homedelivery"{
+                $quote_collection = Mage::getModel('sales/quote')->getCollection()->addFieldToFilter('bpost_pickuplocation_id', $order->getbpost_pickuplocation_id());
+                foreach($quote_collection as $quote){
+                    $shipping = $quote->getShippingAddress();
+                    if($shipping->getFirstname()!=""){
+                        $this->_shippingAddress = $shipping;
+                        break;
+                    }
+                }
+            //}
         }
 
         $document = new DOMDocument('1.0','UTF-8');
