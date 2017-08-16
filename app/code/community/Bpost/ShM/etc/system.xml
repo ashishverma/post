@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <shipping>
+            <groups>
+                <bpost_shm translate="label" module="bpost_shm">
+                    <label>bpost Shipping Manager</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+
+                        <info_text translate="label">
+                            <label>Info text</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_info</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </info_text>
+
+                        <logo translate="label">
+                            <label>Logo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_logo</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+
+                        <accountid translate="label,comment">
+                            <label>Account id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Your 6 digits bpost account ID used for the Shipping Manager.<br/><a target='_blank' href='http://bpost.freshdesk.com/solution/articles/4000061189'>http://bpost.freshdesk.com/solution/articles/4000061189</a>]]></comment>
+                        </accountid>
+
+                        <passphrase translate="label,comment">
+                            <label>Passphrase</label>
+                            <frontend_type>password</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[The passphrase you entered in bpost Shipping Manager back-office application. This is not the password used to access bpost portal.]]></comment>
+                        </passphrase>
+
+                        <api_url translate="label,comment">
+                            <label>API url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Do not modify this setting if you are not 100% sure of what you are doing.]]></comment>
+                        </api_url>
+
+
+                        <sender_name translate="label,comment">
+                            <label>Sender name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_name>
+
+                        <sender_company translate="label,comment">
+                            <label>Sender company</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_company>
+
+                        <sender_streetname translate="label,comment">
+                            <label>Sender streetname</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_streetname>
+
+                        <sender_streetnumber translate="label,comment">
+                            <label>Sender streetnumber</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_streetnumber>
+
+                        <sender_boxnumber translate="label,comment">
+                            <label>Sender boxnumber</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_boxnumber>
+
+                        <sender_postal_code translate="label,comment">
+                            <label>Sender postal code</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_postal_code>
+
+                        <sender_city translate="label,comment">
+                            <label>Sender city</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_city>
+
+                        <sender_country translate="label,comment">
+                            <label>Sender country</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/adminhtml_system_config_source_shipping::getCountries</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_country>
+
+                        <sender_email translate="label,comment">
+                            <label>Sender email</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_email>
+
+                        <sender_phonenumber translate="label,comment">
+                            <label>Sender phonenumber</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Used in the webservice calls.]]></comment>
+                        </sender_phonenumber>
+
+                        <manage_labels_with_magento translate="label,comment">
+                            <label>Use Magento to manage labels</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[If you enable this option, labels are generated directly within Magento. It is not needed to use the bpost Shipping Manager for these tasks. Pop-ups must be enabled in your browser, in order to view the printed labels. Click <a href='http://bpost.freshdesk.com/solution/articles/4000061188' target='_blank'>here</a> to learn more about this option.]]></comment>
+                        </manage_labels_with_magento>
+
+
+                        <label_format translate="label,comment">
+                            <label>Label format</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/adminhtml_system_config_source_shipping::getLabelSizesOptionsArray</source_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <manage_labels_with_magento>1</manage_labels_with_magento>
+                            </depends>
+                            <comment><![CDATA[Choose between A6 or A4 format]]></comment>
+                        </label_format>
+
+                        <automatic_retour_labels translate="label">
+                            <label>Automatic retour labels</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <manage_labels_with_magento>1</manage_labels_with_magento>
+                            </depends>
+                            <comment><![CDATA[If you enable this option, a retour label is automatically added and printed when generating labels. If disabled, you are able to manually create retour labels.]]></comment>
+                        </automatic_retour_labels>
+
+                        <automatic_track_and_trace_information translate="label,comment">
+                            <label>Automatic track and trace information</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <manage_labels_with_magento>1</manage_labels_with_magento>
+                            </depends>
+                            <comment><![CDATA[If you enable this option, the bpost Track & Trace link will be added in the Magento mail templates. It is always possible to manually send these emails.<br/><a href='http://bpost.freshdesk.com/solution/articles/4000062605' target='_blank'>http://bpost.freshdesk.com/solution/articles/4000062605</a>]]></comment>
+                        </automatic_track_and_trace_information>
+
+                        <display_delivery_date translate="label,comment">
+                            <label>Display delivery date</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Displays calculated delivery date]]></comment>
+                            <comment>
+                                <model>bpost_shm/adminhtml_system_config_source_datecomment</model>
+                            </comment>
+                        </display_delivery_date>
+
+                        <days_between_order_and_shipment translate="label">
+                            <label>Days between order and shipment</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends><display_delivery_date>1</display_delivery_date></depends>
+                        </days_between_order_and_shipment>
+
+                        <choose_delivery_date translate="label,comment">
+                            <label>Choose delivery date</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_choose</frontend_model>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends><display_delivery_date>1</display_delivery_date></depends>
+                            <comment><![CDATA[Allow customer to choose their delivery date]]></comment>
+                        </choose_delivery_date>
+
+                        <nr_of_delivery_days_shown translate="label">
+                            <label>Number of delivery days shown</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/adminhtml_system_config_source_shipping::nrOfDeliveryDaysShownOptionsArray</source_model>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <display_delivery_date>1</display_delivery_date>
+                                <choose_delivery_date>1</choose_delivery_date>
+                            </depends>
+                        </nr_of_delivery_days_shown>
+
+                        <next_day_delivery_allowed_till translate="label,comment">
+                            <label>Next day delivery allowed till</label>
+                            <frontend_type>time</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_hour</frontend_model>
+                            <sort_order>240</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[If the order is placed after this cut-off time, an extra day is added to the displayed date. Order placed = end of checkout.]]></comment>
+                            <depends>
+                                <display_delivery_date>1</display_delivery_date>
+                            </depends>
+                        </next_day_delivery_allowed_till>
+
+                        <saturday_delivery_cost translate="label,comment">
+                            <label>Saturday delivery cost</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>250</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Additional fee when using saturday delivery option, e.g.: 4.95.<br />Dear customer, if you decide to offer your own consumers the option of Saturday delivery, you need to select 'Display delivery date' in the general parameters of the plugin and enter the requested information.]]></comment>
+                        </saturday_delivery_cost>
+
+                        <weight_unit translate="label,comment">
+                            <label>Weight unit</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/system_config_source_weightunit</source_model>
+                            <sort_order>255</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Used to calculate the weight before sending it to bpost</comment>
+                        </weight_unit>
+
+                        <browser_api_key translate="label,comment">
+                            <label>Google browser API key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>260</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[bpost uses Google Maps API to display the map in the frontend. <strong> Note:</strong> This is optional if you will not meet the usage limits. Visit Google’s online documentation for more information.]]></comment>
+                        </browser_api_key>
+
+                        <server_api_key translate="label,comment">
+                            <label>Google server API key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>270</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[bpost uses Google Geocoding API to calculate GEO location based on the shipping address. <strong> Note:</strong> This is optional if you will not meet the usage limits. Visit Google’s online documentation for more information.]]></comment>
+                        </server_api_key>
+                    </fields>
+                </bpost_shm>
+            </groups>
+        </shipping>
+
+        <carriers>
+            <groups>
+                <bpost_homedelivery translate="label" module="bpost_shm">
+                    <label>bpost Home delivery</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <logo translate="label">
+                            <label>Logoo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_logo</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+
+
+                        <subheader_general translate="label">
+                            <label>General</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_general>
+
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Delivery at your doorstep or at your office? bpack@home is the most convenient option for you!]]></comment>
+                        </active>
+
+                        <product translate="label,comment">
+                            <label>Product</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_bpack</frontend_model>
+                            <source_model>bpost_shm/system_config_source_product_bpack</source_model>
+                            <backend_model>bpost_shm/system_config_backend_product_bpack</backend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Select which product to use for bpack 24h shipments]]></comment>
+                        </product>
+
+                        <subheader_rates translate="label">
+                            <label>Rates</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_rates>
+
+                        <free_shipping translate="label,comment">
+                            <label>Free shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Allow free shipping]]></comment>
+                        </free_shipping>
+
+                        <free_shipping_from translate="label,comment">
+                            <label>.. as of</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <depends>
+                                <free_shipping>1</free_shipping>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Free shipping will be applied as from a minimum amount]]></comment>
+                        </free_shipping_from>
+
+                        <rate_type translate="label,comment,tooltip">
+                            <label>Rate type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/system_config_source_ratetypes</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Choose your rate type (Flat rate or Table rate)]]></comment>
+                            <tooltip>Importing and exporting table rates only possible on website scope. View the documentation for more information.</tooltip>
+                        </rate_type>
+
+                        <flat_rate_price translate="label,comment">
+                            <label>Flat rate price</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <depends>
+                                <rate_type>0</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Fixed fee for bpost Home delivery shipments, e.g.: 4.95.]]></comment>
+                        </flat_rate_price>
+
+                        <condition_name translate="label">
+                            <label>Table rates condition</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_shipping_tablerate</source_model>
+                            <sort_order>50</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </condition_name>
+
+                        <export translate="label,comment">
+                            <label>Export table rates file</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_tablerates_export_homedelivery</frontend_model>
+                            <sort_order>60</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Export your table rates configuration here.]]></comment>
+                        </export>
+
+                        <import_homedelivery translate="label,comment">
+                            <label>Import table rates file</label>
+                            <frontend_type>import</frontend_type>
+                            <sort_order>70</sort_order>
+                            <backend_model>bpost_shm/adminhtml_system_config_backend_shipping_tablerates_homedelivery</backend_model>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Upload your table rates configuration here. Refer to the manual for more information.]]></comment>
+                        </import_homedelivery>
+
+                        <subheader_options translate="label">
+                            <label>Options</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>75</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_options>
+
+                        <second_presentation translate="label,comment">
+                            <label>2nd presentation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[This options provides automatically a second presentation at the receiver's address should he be absent upon first presentation.]]></comment>
+                        </second_presentation>
+
+                        <second_presentation_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <depends>
+                                <second_presentation>1</second_presentation>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </second_presentation_from>
+
+                        <insurance translate="label,comment">
+                            <label>Insurance</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Insurance to insure your goods to a maximum of 500,00 euro.]]></comment>
+                        </insurance>
+
+                        <insurance_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <depends>
+                                <insurance>1</insurance>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </insurance_from>
+
+                        <signature translate="label,comment">
+                            <label>Signature</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The delivery happens against signature by the receiver.]]></comment>
+                        </signature>
+
+                        <signature_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <depends>
+                                <signature>1</signature>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </signature_from>
+
+                        <saturday_delivery translate="label,comment">
+                            <label>Saturday delivery</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The parcel is delivered on Saturday if it is timely dropped in the bpost network.]]></comment>
+                        </saturday_delivery>
+
+                        <saturday_delivery_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <depends>
+                                <saturday_delivery>1</saturday_delivery>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </saturday_delivery_from>
+                    </fields>
+                </bpost_homedelivery>
+                <bpost_international translate="label" module="bpost_shm">
+                    <label>bpost Home delivery international</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <logo translate="label">
+                            <label>Logoo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_logo</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+
+                        <subheader_general translate="label">
+                            <label>General</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_general>
+
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Delivery at your doorstep or at your office outside Belgium? bpack@international is the most convenient option for you!]]></comment>
+                        </active>
+
+                        <product translate="label,comment">
+                            <label>Product</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/system_config_source_product</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Select which product to use for international shipments]]></comment>
+                        </product>
+
+                        <subheader_rates translate="label">
+                            <label>Rates</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_rates>
+
+                        <free_shipping translate="label,comment">
+                            <label>Free shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Allow free shipping]]></comment>
+                        </free_shipping>
+
+                        <free_shipping_from translate="label,comment">
+                            <label>.. as of</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <depends>
+                                <free_shipping>1</free_shipping>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Free shipping will be applied as from a minimum amount]]></comment>
+                        </free_shipping_from>
+
+                        <rate_type translate="label,comment,tooltip">
+                            <label>Rate type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/system_config_source_ratetypes</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Choose your rate type (Flat rate or Table rate)]]></comment>
+                            <tooltip>Importing and exporting table rates only possible on website scope. View the documentation for more information.</tooltip>
+                        </rate_type>
+
+                        <flat_rate_price translate="label,comment">
+                            <label>Flat rate price</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <depends>
+                                <rate_type>0</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Fixed fee for bpost Home delivery international shipments, e.g.: 4.95.]]></comment>
+                        </flat_rate_price>
+
+                        <condition_name translate="label">
+                            <label>Table rates condition</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_shipping_tablerate</source_model>
+                            <sort_order>90</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </condition_name>
+
+                        <export translate="label,comment">
+                            <label>Export table rates file</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_tablerates_export_international</frontend_model>
+                            <sort_order>100</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Export your table rates configuration here.]]></comment>
+                        </export>
+
+                        <import_international translate="label,comment">
+                            <label>Import table rates file</label>
+                            <frontend_type>import</frontend_type>
+                            <sort_order>110</sort_order>
+                            <backend_model>bpost_shm/adminhtml_system_config_backend_shipping_tablerates_international</backend_model>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Upload your table rates configuration here. Refer to the manual for more information.]]></comment>
+                        </import_international>
+
+                        <subheader_options translate="label">
+                            <label>Options</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_options>
+
+                        <import_countries translate="label,comment">
+                            <label>Import countries</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_api_import_countries</frontend_model>
+                            <sort_order>125</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Import your bpost configured countries here.]]></comment>
+                        </import_countries>
+
+                        <specificcountry translate="label,comment">
+                            <label>Allowed countries</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>125</sort_order>
+                            <source_model>bpost_shm/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <can_be_empty>0</can_be_empty>
+                            <comment><![CDATA[Select one or more countries where bpost Home delivery international should be available for. Make sure your bpost shipping manager is configured properly. Otherwise no countries will be shown in this list after saving the 'Shipping Settings' configuration.]]></comment>
+                        </specificcountry>
+
+                        <insurance translate="label,comment">
+                            <label>International insurance</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Insurance to insure your goods to a maximum of 500,00 euro.]]></comment>
+                        </insurance>
+
+                        <insurance_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <depends>
+                                <insurance>1</insurance>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </insurance_from>
+                    </fields>
+                </bpost_international>
+                <bpost_pickuppoint translate="label" module="bpost_shm">
+                    <label>bpost Pick-up point</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <logo translate="label">
+                            <label>Logo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_logo</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+
+                        <subheader_general translate="label">
+                            <label>General</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_general>
+
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Get your parcel delivered in one of our 1.250 pick-up points.]]></comment>
+                        </active>
+
+                        <subheader_rates translate="label">
+                            <label>Rates</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_rates>
+
+                        <free_shipping translate="label,comment">
+                            <label>Free shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Allow free shipping]]></comment>
+                        </free_shipping>
+
+                        <free_shipping_from translate="label,comment">
+                            <label>.. as of</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <depends>
+                                <free_shipping>1</free_shipping>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Free shipping will be applied as from a minimum amount]]></comment>
+                        </free_shipping_from>
+
+                        <rate_type translate="label,comment,tooltip">
+                            <label>Rate type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/system_config_source_ratetypes</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Choose your rate type (Flat rate or Table rate)]]></comment>
+                            <tooltip>Importing and exporting table rates only possible on website scope. View the documentation for more information.</tooltip>
+                        </rate_type>
+
+                        <flat_rate_price translate="label,comment">
+                            <label>Flat rate price</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <depends>
+                                <rate_type>0</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Fixed fee for bpost Pick-up point shipments, e.g.: 4.95.]]></comment>
+                        </flat_rate_price>
+
+                        <condition_name translate="label">
+                            <label>Table rates condition</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_shipping_tablerate</source_model>
+                            <sort_order>60</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </condition_name>
+
+                        <export translate="label,comment">
+                            <label>Export table rates file</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_tablerates_export_pickuppoint</frontend_model>
+                            <sort_order>70</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Export your table rates configuration here.]]></comment>
+                        </export>
+
+                        <import_pickuppoint translate="label,comment">
+                            <label>Import table rates file</label>
+                            <frontend_type>import</frontend_type>
+                            <sort_order>80</sort_order>
+                            <backend_model>bpost_shm/adminhtml_system_config_backend_shipping_tablerates_pickuppoint</backend_model>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Upload your table rates configuration here. Refer to the manual for more information.]]></comment>
+                        </import_pickuppoint>
+
+                        <subheader_options translate="label">
+                            <label>Options</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_options>
+
+                        <insurance translate="label,comment">
+                            <label>Insurance</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Insurance to insure your goods to a maximum of 500,00 euro.]]></comment>
+                        </insurance>
+
+                        <insurance_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <depends>
+                                <insurance>1</insurance>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </insurance_from>
+
+                        <saturday_delivery translate="label,comment">
+                            <label>Saturday delivery</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The parcel is delivered on Saturday if it is timely dropped in the bpost network.]]></comment>
+                        </saturday_delivery>
+
+                        <saturday_delivery_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <depends>
+                                <saturday_delivery>1</saturday_delivery>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </saturday_delivery_from>
+                    </fields>
+                </bpost_pickuppoint>
+                <bpost_parcellocker translate="label" module="bpost_shm">
+                    <label>bpost Parcel locker</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>80</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <logo translate="label">
+                            <label>Logoo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_logo</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+
+                        <subheader_general translate="label">
+                            <label>General</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_general>
+
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Have your parcels delivered in one of our parcel lockers. Very convenient, centrally located, always open, 24/7!]]></comment>
+                        </active>
+
+                        <subheader_rates translate="label">
+                            <label>Rates</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_rates>
+
+                        <free_shipping translate="label,comment">
+                            <label>Free shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Allow free shipping.]]></comment>
+                        </free_shipping>
+
+                        <free_shipping_from translate="label,comment">
+                            <label>.. as of</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <depends>
+                                <free_shipping>1</free_shipping>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Free shipping will be applied as from a minimum amount]]></comment>
+                        </free_shipping_from>
+
+                        <rate_type translate="label,comment,tooltip">
+                            <label>Rate type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/system_config_source_ratetypes</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Choose your rate type (Flat rate or Table rate)]]></comment>
+                            <tooltip>Importing and exporting table rates only possible on website scope. View the documentation for more information.</tooltip>
+                        </rate_type>
+
+                        <flat_rate_price translate="label">
+                            <label>Flat rate price</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <depends>
+                                <rate_type>0</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Fixed fee for bpost Pick-up point shipments, e.g.: 4.95.]]></comment>
+                        </flat_rate_price>
+
+                        <condition_name translate="label">
+                            <label>Table rates condition</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_shipping_tablerate</source_model>
+                            <sort_order>60</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </condition_name>
+
+                        <export translate="label,comment">
+                            <label>Export table rates file</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_tablerates_export_parcellocker</frontend_model>
+                            <sort_order>70</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Export your table rates configuration here.]]></comment>
+                        </export>
+
+                        <import_parcellocker translate="label,comment">
+                            <label>Import table rates file</label>
+                            <frontend_type>import</frontend_type>
+                            <sort_order>80</sort_order>
+                            <backend_model>bpost_shm/adminhtml_system_config_backend_shipping_tablerates_parcellocker</backend_model>
+                            <depends>
+                                <rate_type>1</rate_type>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Upload your table rates configuration here. Refer to the manual for more information.]]></comment>
+                        </import_parcellocker>
+
+                        <subheader_options translate="label">
+                            <label>Options</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subheader_options>
+
+                        <insurance translate="label,comment">
+                            <label>Insurance</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Insurance to insure your goods to a maximum of 500,00 euro.]]></comment>
+                        </insurance>
+
+                        <insurance_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <depends>
+                                <insurance>1</insurance>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </insurance_from>
+
+                        <saturday_delivery translate="label,comment">
+                            <label>Saturday delivery</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The parcel is delivered on Saturday if it is timely dropped in the bpost network.]]></comment>
+                        </saturday_delivery>
+
+                        <saturday_delivery_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <depends>
+                                <saturday_delivery>1</saturday_delivery>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </saturday_delivery_from>
+                    </fields>
+                </bpost_parcellocker>
+                <bpost_clickcollect translate="label" module="bpost_shm">
+                    <label><![CDATA[bpost Click & Collect]]></label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <logo translate="label">
+                            <label>Logo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_logo</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo>
+
+                        <clickcollect_info>
+                            <label>clickcollectinfo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_clickcollect</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>0</activated>
+                            </depends>
+                        </clickcollect_info>
+
+                        <clickcollect_cache_info>
+                            <label>clickcollectcacheinfo</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_cacheinfo</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                        </clickcollect_cache_info>
+
+                        <subheader_general translate="label">
+                            <label>General</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                        </subheader_general>
+
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[]]></comment>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                        </active>
+
+                        <marker translate="label,comment">
+                            <label>Logo</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">bpost</upload_dir>
+                            <base_url type="media" scope_info="1">bpost</base_url>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                            <comment><![CDATA[Upload a custom map marker (18x18 px)]]></comment>
+                        </marker>
+
+                        <subheader_rates translate="label">
+                            <label>Rates</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                        </subheader_rates>
+
+                        <free_shipping translate="label,comment">
+                            <label>Free shipping</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                            <comment><![CDATA[Allow free shipping]]></comment>
+                        </free_shipping>
+
+                        <free_shipping_from translate="label,comment">
+                            <label>.. as of</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <depends>
+                                <free_shipping>1</free_shipping>
+                                <activated>1</activated>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Free shipping will be applied as from a minimum amount]]></comment>
+                        </free_shipping_from>
+
+                        <rate_type translate="label,comment,tooltip">
+                            <label>Rate type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bpost_shm/system_config_source_ratetypes</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                            <comment><![CDATA[Choose your rate type (Flat rate or Table rate)]]></comment>
+                            <tooltip>Importing and exporting table rates only possible on website scope. View the documentation for more information.</tooltip>
+                        </rate_type>
+
+                        <flat_rate_price translate="label,comment">
+                            <label>Flat rate price</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <depends>
+                                <rate_type>0</rate_type>
+                                <activated>1</activated>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Fixed fee for bpost Click & Collect shipments, e.g.: 4.95.]]></comment>
+                        </flat_rate_price>
+
+                        <condition_name translate="label">
+                            <label>Table rates condition</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_shipping_tablerate</source_model>
+                            <sort_order>60</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                                <activated>1</activated>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </condition_name>
+
+                        <export translate="label,comment">
+                            <label>Export table rates file</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_tablerates_export_clickcollect</frontend_model>
+                            <sort_order>70</sort_order>
+                            <depends>
+                                <rate_type>1</rate_type>
+                                <activated>1</activated>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Export your table rates configuration here.]]></comment>
+                        </export>
+
+                        <import_clickcollect translate="label,comment">
+                            <label>Import table rates file</label>
+                            <frontend_type>import</frontend_type>
+                            <sort_order>80</sort_order>
+                            <backend_model>bpost_shm/adminhtml_system_config_backend_shipping_tablerates_clickcollect</backend_model>
+                            <depends>
+                                <rate_type>1</rate_type>
+                                <activated>1</activated>
+                            </depends>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Upload your table rates configuration here. Refer to the manual for more information.]]></comment>
+                        </import_clickcollect>
+
+                        <subheader_options translate="label">
+                            <label>Options</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>bpost_shm/adminhtml_system_config_form_field_subheader</frontend_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                        </subheader_options>
+
+                        <insurance translate="label,comment">
+                            <label>Insurance</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                            <comment><![CDATA[Insurance to insure your goods to a maximum of 500,00 euro.]]></comment>
+                        </insurance>
+
+                        <insurance_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <depends>
+                                <insurance>1</insurance>
+                                <activated>1</activated>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </insurance_from>
+
+                        <saturday_delivery translate="label,comment">
+                            <label>Saturday delivery</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[The parcel is delivered on Saturday if it is timely dropped in the bpost network.]]></comment>
+                            <depends>
+                                <activated>1</activated>
+                            </depends>
+                        </saturday_delivery>
+
+                        <saturday_delivery_from translate="label">
+                            <label>.. as from</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <depends>
+                                <saturday_delivery>1</saturday_delivery>
+                                <activated>1</activated>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </saturday_delivery_from>
+                    </fields>
+                </bpost_clickcollect>
+            </groups>
+        </carriers>
+    </sections>
+</config>

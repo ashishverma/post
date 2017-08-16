@@ -1,0 +1,17 @@
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+        <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0" width="640">
+            <tr>
+                <td valign="top" style="color: #000000; font-size: 12px; font-family: Arial, Helvetica, sans-serif; line-height:18px; margin: 0;">
+                    Hello{{var receiver_name}},
+
+                    There was an error when calling the bpost API for order #{{var order_id}}. The order was succesfully created in Magento, but please check the logs en create the order in the bpost Shipping Manager manually if needed.
+
+                    Error message:
+
+                    {{var error_message}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>

@@ -1,0 +1,128 @@
+<?php $settings = $this->getSettings() ?>
+<?php $bpostHelper = Mage::helper("bpost_shm");?>
+
+<div id="bpostShm" class="bpostspotswrapper">
+    <?php if($bpostHelper->isOnestepCheckout()){ ?>
+        <div id="bpost-info-wrapper">
+            <div id="bpostinfo"></div>
+        </div>
+    <?php }else{ ?>
+        <div id="bpostinfo"></div>
+    <?php } ?>
+
+    <div id="bpostresult"></div>
+
+    <?php if($this->getCurrentShippingMethod() == "bpostshm_bpost_pickuppoint"){ ?>
+        <a href="#" id="selectPickupPoint" type="<?php echo Bpost_ShM_Model_Api::TYPE_PICKUP_POINT; ?>">
+            <?php echo $settings['select_text'] ?>
+        </a>
+    <?php }elseif($this->getCurrentShippingMethod() == "bpostshm_bpost_clickcollect"){ ?>
+        <a href="#" id="selectPickupPoint" type="<?php echo Bpost_ShM_Model_Api::TYPE_CLICK_COLLECT; ?>">
+            <?php echo $settings['select_text_clickcollect'] ?>
+        </a>
+    <?php }else{ ?>
+        <a href="#" id="selectPickupPoint" type="<?php echo Bpost_ShM_Model_Api::TYPE_PARCEL_LOCKER; ?>">
+            <?php echo $settings['select_text_parcel_locker'] ?>
+        </a>
+    <?php } ?>
+
+    <input id="bpost-id" type="hidden" name="bpost[id]" class="validate-bpostspot validate-parcel validate-clickcollect"/>
+    <input type="hidden" name="bpost[street]"/>
+    <input type="hidden" name="bpost[city]"/>
+    <input type="hidden" name="bpost[postcode]"/>
+    <input type="hidden" name="bpost[name]"/>
+
+    <div class="notifications" id="notifications-pick-up-point">
+        <h5><?php echo $settings['notifications_text_pickup_point'] ?></h5>
+        <label for="pickup-point-notification-sms"<?php echo !$this->getBpostNotificationSms() || $this->getBpostNotificationSms() == "-" ? ' class="disabled"' : ''; ?>><input id="pickup-point-notification-sms" type="radio" value="sms" name="notification"<?php echo !$this->getBpostNotificationSms() || $this->getBpostNotificationSms() == "-" ? ' disabled="disabled"' : ''; ?>/> <?php echo $settings['notifications_sms_pickup_point'] ?> (<?php echo ($this->getBpostNotificationSms() ?: '<span class="error">'.$settings['no_telephone_number'].'</span>'); ?>)</label>
+        <label for="pickup-point-notification-email"><input type="radio" id="pickup-point-notification-email" name="notification" value="email"/> <?php echo $settings['notifications_email'] ?> (<?php echo $this->getBpostNotificationEmail(); ?>)</label>
+    </div>
+
+    <div class="notifications" id="notifications-parcel-locker">
+        <h5><?php echo $settings['notifications_text_parcel_locker'] ?></h5>
+        <label for="notification-sms"<?php echo !$this->getBpostNotificationSms() || $this->getBpostNotificationSms() == "-" ? ' class="disabled"' : ''; ?>><input type="checkbox" id="notification-sms" value="sms" name="parcel-notification"<?php echo !$this->getBpostNotificationSms() || $this->getBpostNotificationSms() == "-" ? ' disabled="disabled"' : ''; ?>/> <?php echo $settings['notifications_sms_parcel_locker'] ?> (<?php echo ($this->getBpostNotificationSms() ?: '<span class="error">'.$settings['no_telephone_number'].'</span>'); ?>)</label>
+        <br/>
+        <div id="reduced-mobility-wrapper">
+            <label for="reduced-mobility"><input type="checkbox" id="reduced-mobility" name="reduced-mobility"/> <?php echo $bpostHelper->__("I wish to use the reduced mobility zone"); ?></label>
+            <div class="reduced-mobility-tooltip"><?php echo $bpostHelper->__("By using this option, customers with reduced mobility can use the lockers of the machine easiest to reach.");?></div>
+        </div>
+    </div>
+</div>
+
+<div id="bpostDelivery">
+    <div class="bpost-deliverydate-wrapper">
+        <h5><?php echo $settings['datepicker_delivery_date_text'] ?></h5>
+        <div class="bpost-display-deliverydate"></div>
+    </div>
+    <div class="bpost-choose-deliverydate"></div>
+    <div class="cf"></div>
+    <div class="bpost-saturday-delivery">
+        <label for="bpost-saturday">
+            <input type="checkbox" <?php if($bpostHelper->isOnestepCheckout()){ echo 'onclick="stopObserving(); triggerAjaxCallGetSeparateSaveMethods(\'' . $this->getUrl('onestepcheckout/ajax/set_methods_separate', array('_secure'=>true)) . '\', false);"';}?> name="bpost_saturday_delivery" id="bpost-saturday" value="1" />
+            <div class="bpost-label-text"><?php echo $settings['datepicker_saturday_delivery_text'] ?><?php if($this->getSaturdayDeliveryCost()) { ?><br /><small><?php echo sprintf($settings['datepicker_saturday_delivery_cost'], $this->getSaturdayDeliveryCost()) ?></small><?php } ?></div>
+        </label>
+    </div>
+    <input type="hidden" name="bpost[deliverydate]" class="deliverydate-required-entry"/>
+</div>
+
+<script type="text/javascript">
+    window.onestepcheckout_set_methods_separate = '<?php echo $this->getUrl('onestepcheckout/ajax/set_methods_separate', array('_secure'=>true));?>';
+    window.bpostSettings = <?php echo json_encode($settings); ?>;
+    window.bpostShM = new Bpost.ShM(window.bpostSettings, "<?php echo $this->getCurrentShippingMethod(); ?>");
+
+    Validation.add('deliverydate-required-entry', "<?php echo Mage::helper('bpost_shm')->__('This is a required field.'); ?>", function (v) {
+        if($('bpostDelivery').getStyle('display') == 'none'){
+            return true;
+        }
+        return !Validation.get('IsEmpty').test(v);
+    });
+
+    Validation.add('validate-bpostspot', "<?php echo Mage::helper('bpost_shm')->__('Please select a bpost pick-up point'); ?>", function (v) {
+        if($('s_method_bpostshm_bpost_pickuppoint')) {
+            return !($('s_method_bpostshm_bpost_pickuppoint').checked && Validation.get('IsEmpty').test(v))
+        }
+        else{
+            return true;
+        }
+    });
+
+    Validation.add('validate-clickcollect', "<?php echo Mage::helper('bpost_shm')->__('Please select a bpost Click & Collect point'); ?>", function (v) {
+        if($('s_method_bpostshm_bpost_clickcollect')) {
+            return !($('s_method_bpostshm_bpost_clickcollect').checked && Validation.get('IsEmpty').test(v))
+        }
+        else{
+            return true;
+        }
+    });
+
+    Validation.add('validate-parcel', "<?php echo Mage::helper('bpost_shm')->__('Please select a bpost parcel locker'); ?>", function (v) {
+        if($('s_method_bpostshm_bpost_parcellocker')) {
+            return !($('s_method_bpostshm_bpost_parcellocker').checked && Validation.get('IsEmpty').test(v))
+        }
+        else{
+            return true;
+        }
+    });
+
+    Validation.add('validate-multiple-delivery-dates', "<?php echo Mage::helper('bpost_shm')->__('Please select a delivery date'); ?>", function (v,elm) {
+        var inputs = $$('input[name="bpost[deliverydate]"]');
+
+        var error = 1;
+        for(var i=0;i<inputs.length;i++) {
+            if((inputs[i].type == 'checkbox' || inputs[i].type == 'radio') && inputs[i].checked == true) {
+                error = 0;
+            }
+
+            if(Validation.isOnChange && (inputs[i].type == 'checkbox' || inputs[i].type == 'radio')) {
+                Validation.reset(inputs[i]);
+            }
+        }
+
+        if( error == 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+</script>

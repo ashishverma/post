@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <sales>
+            <children>
+                <bpost_orders module="bpost_shm" translate="title">
+                    <title>bpost Orders</title>
+                    <sort_order>15</sort_order>
+                    <children>
+                        <bpost_all_orders>
+                            <title>All bpost orders</title>
+                            <sort_order>1</sort_order>
+                            <action>adminhtml/bpost_shM_allOrders/index</action>
+                        </bpost_all_orders>
+                        <bpost_pending_orders>
+                            <title>Pending bpost orders</title>
+                            <sort_order>2</sort_order>
+                            <action>adminhtml/bpost_shM_pendingOrders/index</action>
+                        </bpost_pending_orders>
+                    </children>
+                </bpost_orders>
+            </children>
+        </sales>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <bpost_orders translate="title">
+                                <title>Bpost orders</title>
+                                <sort_order>1</sort_order>
+                                <children>
+                                    <bpost_all_orders>
+                                        <title>All bpost orders</title>
+                                        <sort_order>1</sort_order>
+                                    </bpost_all_orders>
+                                    <bpost_pending_orders>
+                                        <title>Pending bpost orders</title>
+                                        <sort_order>1</sort_order>
+                                    </bpost_pending_orders>
+                                    <bpost_download_labels>
+                                        <title>Download bpost labels</title>
+                                        <sort_order>1</sort_order>
+                                    </bpost_download_labels>
+                                </children>
+                            </bpost_orders>
+                        </children>
+                    </sales>
+
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <bpost_shm translate="title" module="bpost_shm">
+                                        <title>Bpost - Shipping Manager</title>
+                                        <sort_order>1</sort_order>
+                                    </bpost_shm>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

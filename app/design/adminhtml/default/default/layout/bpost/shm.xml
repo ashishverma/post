@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<layout>
+
+    <popup_handle>
+        <reference name="head">
+            <action method="addJS">
+                <script>bpost/shm/adminhtml/informationpopup.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type helper="bpost_shm/data/getMagentoWindowCssItemType" />
+                <name helper="bpost_shm/data/getMageWindowCss" />
+            </action>
+            <action method="addCss">
+                <name>css/bpost/informationpopup.css</name>
+            </action>
+        </reference>
+    </popup_handle>
+
+    <adminhtml_bpost_shm_config_popup>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>bpost/empty.phtml</template>
+            </action>
+        </reference>
+        <reference name="head">
+            <action method="addCss">
+                <name>css/bpost/informationpopup.css</name>
+            </action>
+        </reference>
+    </adminhtml_bpost_shm_config_popup>
+
+    <adminhtml_system_config_edit>
+        <update handle="popup_handle" />
+    </adminhtml_system_config_edit>
+
+    <adminhtml_bpost_shm_config_informationpopup>
+        <update handle="adminhtml_bpost_shm_config_popup"/>
+        <reference name="content">
+            <block type="core/template" name="informationPopup" template="bpost/informationpopup.phtml"/>
+        </reference>
+    </adminhtml_bpost_shm_config_informationpopup>
+
+    <adminhtml_bpost_shm_config_screenshotpopup>
+        <update handle="adminhtml_bpost_shm_config_popup"/>
+
+        <reference name="content">
+            <block type="core/template" name="screenshot.popup" template="bpost/screenshotpopup.phtml"/>
+        </reference>
+    </adminhtml_bpost_shm_config_screenshotpopup>
+
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_tabs">
+            <action method="addTab">
+                <name>order_view_tab_bpostreturnlabeltab</name>
+                <block>bpost_shm/adminhtml_sales_order_view_tab_returnlabels</block>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+
+    <adminhtml_bpost_shm_allorders_index>
+        <update handle="popup_handle" />
+    </adminhtml_bpost_shm_allorders_index>
+
+    <adminhtml_bpost_shm_pendingorders_index>
+        <update handle="popup_handle" />
+    </adminhtml_bpost_shm_pendingorders_index>
+</layout>

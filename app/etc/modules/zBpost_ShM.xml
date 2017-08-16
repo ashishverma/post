@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bpost_ShM>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Bpost_ShM>
+    </modules>
+</config>

@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bpost_ShM>
+            <version>1.3.7</version>
+        </Bpost_ShM>
+    </modules>
+    <global>
+        <blocks>
+            <bpost_shm>
+                <class>Bpost_ShM_Block</class>
+            </bpost_shm>
+        </blocks>
+        <models>
+            <bpost_shm>
+                <class>Bpost_ShM_Model</class>
+                <resourceModel>bpost_shm_resource</resourceModel>
+            </bpost_shm>
+            <bpost_shm_resource>
+                <class>Bpost_ShM_Model_Resource</class>
+                <entities>
+                    <bpost_tablerates_homedelivery>
+                        <table>bpost_tablerates_homedelivery</table>
+                    </bpost_tablerates_homedelivery>
+
+                    <bpost_tablerates_international>
+                        <table>bpost_tablerates_international</table>
+                    </bpost_tablerates_international>
+
+                    <bpost_tablerates_pickuppoint>
+                        <table>bpost_tablerates_pickuppoint</table>
+                    </bpost_tablerates_pickuppoint>
+
+                    <bpost_tablerates_parcellocker>
+                        <table>bpost_tablerates_parcellocker</table>
+                    </bpost_tablerates_parcellocker>
+
+                    <bpost_tablerates_clickcollect>
+                        <table>bpost_tablerates_clickcollect</table>
+                    </bpost_tablerates_clickcollect>
+
+                    <returnlabel>
+                        <table>bpost_shipping_returnlabel</table>
+                    </returnlabel>
+
+                    <bpost_country>
+                        <table>bpost_country</table>
+                    </bpost_country>
+
+                    <bpost_holidays>
+                        <table>bpost_holidays</table>
+                    </bpost_holidays>
+                </entities>
+            </bpost_shm_resource>
+        </models>
+
+        <resources>
+            <bpost_shm_setup>
+                <setup>
+                    <module>Bpost_ShM</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </bpost_shm_setup>
+            <bpost_shm_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </bpost_shm_write>
+            <bpost_shm_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </bpost_shm_read>
+        </resources>
+
+        <helpers>
+            <bpost_shm>
+                <class>Bpost_ShM_Helper</class>
+            </bpost_shm>
+        </helpers>
+
+        <template>
+            <email>
+                <bpost_shm_errorhandling_create_order_email_template translate="label" module="bpost_shm">
+                    <label>bpost - errorhandling create order</label>
+                    <file>bpost/errorhandling_create_order.html</file>
+                    <type>html</type>
+                </bpost_shm_errorhandling_create_order_email_template>
+
+                <bpost_returnlabel_email_template translate="label" module="bpost_shm">
+                    <label>bpost - returnlabel Email</label>
+                    <file>bpost/returnlabel.html</file>
+                    <type>html</type>
+                </bpost_returnlabel_email_template>
+            </email>
+        </template>
+
+        <fieldsets>
+            <sales_convert_quote>
+                <bpost_notification_sms><to_order>*</to_order></bpost_notification_sms>
+                <bpost_notification_email><to_order>*</to_order></bpost_notification_email>
+                <bpost_reduced_mobility><to_order>*</to_order></bpost_reduced_mobility>
+                <bpost_delivery_date><to_order>*</to_order></bpost_delivery_date>
+                <bpost_drop_date><to_order>*</to_order></bpost_drop_date>
+            </sales_convert_quote>
+
+            <sales_convert_order>
+                <bpost_notification_sms><to_quote>*</to_quote></bpost_notification_sms>
+                <bpost_notification_email><to_quote>*</to_quote></bpost_notification_email>
+                <bpost_reduced_mobility><to_quote>*</to_quote></bpost_reduced_mobility>
+                <bpost_delivery_date><to_quote>*</to_quote></bpost_delivery_date>
+                <bpost_drop_date><to_quote>*</to_quote></bpost_drop_date>
+            </sales_convert_order>
+        </fieldsets>
+    </global>
+
+    <frontend>
+        <translate>
+            <modules>
+                <Bpost_ShM>
+                    <files>
+                        <default>Bpost_ShM.csv</default>
+                    </files>
+                </Bpost_ShM>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <bpost_shm>
+                    <file>bpost/shm.xml</file>
+                </bpost_shm>
+            </updates>
+        </layout>
+        <routers>
+            <bpost_shm>
+                <use>standard</use>
+                <args>
+                    <module>Bpost_ShM</module>
+                    <frontName>bpost</frontName>
+                </args>
+            </bpost_shm>
+        </routers>
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <bpost_shm_core_block_abstract_to_html_after>
+                        <class>bpost_shm/observer</class>
+                        <method>core_block_abstract_to_html_after</method>
+                    </bpost_shm_core_block_abstract_to_html_after>
+                </observers>
+            </core_block_abstract_to_html_after>
+
+            <controller_action_predispatch_onestepcheckout_index_index>
+                <observers>
+                    <bpost_shm_controller_action_predispatch_onestepcheckout_index_index>
+                        <class>bpost_shm/observer</class>
+                        <method>controller_action_predispatch_onestepcheckout_index_index</method>
+                    </bpost_shm_controller_action_predispatch_onestepcheckout_index_index>
+                </observers>
+            </controller_action_predispatch_onestepcheckout_index_index>
+
+            <controller_action_predispatch_checkout_onepage_saveBilling>
+                <observers>
+                    <bpost_shm_controller_action_predispatch_checkout_onepage_savebilling>
+                        <class>bpost_shm/observer</class>
+                        <method>controller_action_predispatch_checkout_onepage_saveAddress</method>
+                    </bpost_shm_controller_action_predispatch_checkout_onepage_savebilling>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_saveBilling>
+
+            <controller_action_predispatch_checkout_onepage_saveShipping>
+                <observers>
+                    <bpost_shm_controller_action_predispatch_checkout_onepage_saveshipping>
+                        <class>bpost_shm/observer</class>
+                        <method>controller_action_predispatch_checkout_onepage_saveAddress</method>
+                    </bpost_shm_controller_action_predispatch_checkout_onepage_saveshipping>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_saveShipping>
+
+            <controller_action_postdispatch_checkout_onepage_saveBilling>
+                <observers>
+                    <bpost_shm_controller_action_postdispatch_checkout_onepage_savebilling>
+                        <class>bpost_shm/observer</class>
+                        <method>controller_action_postdispatch_checkout_onepage_saveAddress</method>
+                    </bpost_shm_controller_action_postdispatch_checkout_onepage_savebilling>
+                </observers>
+            </controller_action_postdispatch_checkout_onepage_saveBilling>
+
+            <controller_action_postdispatch_checkout_onepage_saveShipping>
+                <observers>
+                    <bpost_shm_controller_action_postdispatch_checkout_onepage_saveshipping>
+                        <class>bpost_shm/observer</class>
+                        <method>controller_action_postdispatch_checkout_onepage_saveAddress</method>
+                    </bpost_shm_controller_action_postdispatch_checkout_onepage_saveshipping>
+                </observers>
+            </controller_action_postdispatch_checkout_onepage_saveShipping>
+
+            <controller_action_postdispatch_onestepcheckout_ajax_save_billing>
+                <observers>
+                    <bpost_shm_controller_action_postdispatch_onestepcheckout_ajax_save_billing>
+                        <class>bpost_shm/observer</class>
+                        <method>controller_action_postdispatch_checkout_onepage_saveAddress</method>
+                    </bpost_shm_controller_action_postdispatch_onestepcheckout_ajax_save_billing>
+                </observers>
+            </controller_action_postdispatch_onestepcheckout_ajax_save_billing>
+
+            <checkout_controller_onepage_save_shipping_method>
+                <observers>
+                    <bpost_shm_checkout_controller_onepage_save_shipping_method>
+                        <class>bpost_shm/observer</class>
+                        <method>checkout_controller_onepage_save_shipping_method</method>
+                    </bpost_shm_checkout_controller_onepage_save_shipping_method>
+                </observers>
+            </checkout_controller_onepage_save_shipping_method>
+
+            <checkout_submit_all_after>
+                <observers>
+                    <bpost_shm_checkout_submit_all_after>
+                        <class>bpost_shm/observer</class>
+                        <method>checkout_submit_all_after</method>
+                    </bpost_shm_checkout_submit_all_after>
+                </observers>
+            </checkout_submit_all_after>
+
+            <sales_quote_collect_totals_before>
+                <observers>
+                    <bpost_shm_set_address_defaults>
+                        <type>model</type>
+                        <class>bpost_shm/observer</class>
+                        <method>sales_quote_collect_totals_before</method>
+                    </bpost_shm_set_address_defaults>
+                </observers>
+            </sales_quote_collect_totals_before>
+        </events>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Bpost_ShM>
+                    <files>
+                        <default>Bpost_ShM.csv</default>
+                    </files>
+                </Bpost_ShM>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <bpost_shm>
+                    <file>bpost/shm.xml</file>
+                </bpost_shm>
+            </updates>
+        </layout>
+        <events>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <bpost_shm_core_block_abstract_to_html_before>
+                        <class>bpost_shm/adminhtml_observer</class>
+                        <method>core_block_abstract_to_html_before</method>
+                    </bpost_shm_core_block_abstract_to_html_before>
+                </observers>
+            </core_block_abstract_to_html_before>
+
+            <admin_system_config_changed_section_shipping>
+                <observers>
+                    <bpost_shm_admin_system_config_changed_section_shipping>
+                        <class>bpost_shm/adminhtml_observer</class>
+                        <method>admin_system_config_changed_section_shipping</method>
+                    </bpost_shm_admin_system_config_changed_section_shipping>
+                </observers>
+            </admin_system_config_changed_section_shipping>
+
+            <bpost_shm_prepare_grid_collection_after>
+                <observers>
+                    <bpost_shm_prepare_grid_collection_after>
+                        <class>bpost_shm/adminhtml_observer</class>
+                        <method>bpost_shm_prepare_grid_collection_after</method>
+                    </bpost_shm_prepare_grid_collection_after>
+                </observers>
+            </bpost_shm_prepare_grid_collection_after>
+            
+            <sales_order_shipment_save_before>
+                <observers>
+                    <bpost_shm_sales_order_shipment_save_before>
+                        <class>bpost_shm/adminhtml_observer</class>
+                        <method>sales_order_shipment_save_before</method>
+                        <type>model</type>
+                    </bpost_shm_sales_order_shipment_save_before>
+                </observers>
+            </sales_order_shipment_save_before>
+        </events>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <bpost_shm before="Mage_Adminhtml">Bpost_ShM_Adminhtml</bpost_shm>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <default>
+        <carriers>
+            <bpostshm>
+                <active>1</active>
+                <model>bpost_shm/shipping_carrier_bpostShM</model>
+                <title>bpost</title>
+                <name>bpost</name>
+                <showmethod>1</showmethod>
+            </bpostshm>
+            <bpost_homedelivery>
+                <active>1</active>
+                <product>0</product>
+                <title>bpost</title>
+                <name>Home delivery</name>
+                <free_shipping>0</free_shipping>
+                <rate_type>0</rate_type>
+                <flat_rate_price>0</flat_rate_price>
+                <sort_order>0</sort_order>
+                <showmethod>1</showmethod>
+                <second_presentation>0</second_presentation>
+                <insurance>0</insurance>
+                <signature>0</signature>
+                <saturday_delivery>0</saturday_delivery>
+                <sort_order>1</sort_order>
+                <showmethod>1</showmethod>
+                <specificerrmsg>Bpost homedelivery is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </bpost_homedelivery>
+            <bpost_international>
+                <active>1</active>
+                <title>bpost</title>
+                <name>International</name>
+                <sort_order>10</sort_order>
+                <rate_type>0</rate_type>
+                <flat_rate_price>0</flat_rate_price>
+                <showmethod>1</showmethod>
+                <sallowspecific>1</sallowspecific>
+                <product>0</product>
+                <insurance>0</insurance>
+                <specificerrmsg>Bpost international is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </bpost_international>
+            <bpost_pickuppoint>
+                <active>1</active>
+                <title>bpost</title>
+                <name>Pick-up point</name>
+                <rate_type>0</rate_type>
+                <flat_rate_price>0</flat_rate_price>
+                <showmethod>1</showmethod>
+                <insurance>0</insurance>
+                <sort_order>20</sort_order>
+                <saturday_delivery>0</saturday_delivery>
+                <specificerrmsg>Bpost pick-up-point is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </bpost_pickuppoint>
+            <bpost_parcellocker>
+                <active>1</active>
+                <title>bpost</title>
+                <name>Parcel locker</name>
+                <rate_type>0</rate_type>
+                <flat_rate_price>0</flat_rate_price>
+                <showmethod>1</showmethod>
+                <insurance>0</insurance>
+                <sort_order>30</sort_order>
+                <saturday_delivery>0</saturday_delivery>
+                <specificerrmsg>Bpost parcel locker is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </bpost_parcellocker>
+            <bpost_clickcollect>
+                <activated>0</activated>
+                <active>0</active>
+                <title>bpost</title>
+                <name><![CDATA[Click & Collect]]></name>
+                <rate_type>0</rate_type>
+                <flat_rate_price>0</flat_rate_price>
+                <showmethod>1</showmethod>
+                <insurance>0</insurance>
+                <sort_order>20</sort_order>
+                <saturday_delivery>0</saturday_delivery>
+                <specificerrmsg><![CDATA[Bpost Click & Collect is currently unavailable. If you would like to ship using this shipping method, please contact the web merchant.]]></specificerrmsg>
+            </bpost_clickcollect>
+        </carriers>
+        <shipping>
+            <bpost_shm>
+                <api_log_level>3</api_log_level>
+                <log_level>3</log_level>
+                <enable_log_api>1</enable_log_api>
+                <enable_log>1</enable_log>
+                <api_url>https://api.bpost.be</api_url>
+                <frontend_api_url>https://shippingmanager.bpost.be/ShmFrontEnd/start</frontend_api_url>
+                <sender_country>BE</sender_country>
+                <manage_labels_with_magento>1</manage_labels_with_magento>
+                <label_format>A4</label_format>
+                <automatic_retour_labels>0</automatic_retour_labels>
+                <automatic_track_and_trace_information>1</automatic_track_and_trace_information>
+                <display_delivery_date>0</display_delivery_date>
+                <choose_delivery_date>0</choose_delivery_date>
+                <nr_of_delivery_days_shown>5</nr_of_delivery_days_shown>
+                <next_day_delivery_allowed_till>17,00</next_day_delivery_allowed_till>
+                <days_between_order_and_shipment>0</days_between_order_and_shipment>
+                <weight_unit>1</weight_unit>
+            </bpost_shm>
+        </shipping>
+    </default>
+</config>

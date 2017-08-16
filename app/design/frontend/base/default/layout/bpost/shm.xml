@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<layout>
+    <checkout_header>
+        <reference name="head">
+            <action method="addJs">
+                <script>bpost/shm/checkout.js</script>
+            </action>
+
+            <action method="addCss">
+                <name>css/bpost/checkout.css</name>
+            </action>
+
+            <block type="core/template" name="gmapsapi" template="bpost/shm/gmapsapi.phtml"/>
+        </reference>
+    </checkout_header>
+
+    <checkout_onepage_index>
+        <update handle="checkout_header"/>
+    </checkout_onepage_index>
+
+    <onestepcheckout_index_index>
+        <update handle="checkout_header"/>
+
+        <reference name="head">
+            <block type="core/template" name="oscwindowjs" template="bpost/shm/oscwindowjs.phtml"/>
+
+            <action method="addJs">
+                <script>bpost/shm/onestepcheckout_shipping.js</script>
+            </action>
+
+            <action method="addItem">
+                <type>skin_js</type><name>js/bpost/onestepcheckout.js</name>
+            </action>
+        </reference>
+    </onestepcheckout_index_index>
+</layout>

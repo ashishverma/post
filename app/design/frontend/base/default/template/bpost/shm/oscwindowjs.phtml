@@ -1,0 +1,4 @@
+<?php $_helper = Mage::helper('bpost_shm') ?>
+<?php if($_helper->getOnestepCheckoutVersion() == '4.5'): ?>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>bpost/shm/window.js"></script>
+<?php endif; ?>

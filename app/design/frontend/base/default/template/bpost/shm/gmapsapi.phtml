@@ -1,0 +1,12 @@
+<?php $currentlySecure = Mage::app()->getStore()->isCurrentlySecure();?>
+<?php ($currentlySecure ? $protocol = 'https' : $protocol = 'http')?>
+
+<?php $_configHelper = Mage::helper('bpost_shm/system_config') ?>
+<?php if ($_configHelper->getBpostShippingConfig('browser_api_key') != "") { ?>
+    <script src="<?php echo $protocol;?>://maps.googleapis.com/maps/api/js?key=<?php echo $_configHelper->getBpostShippingConfig('browser_api_key') ?>&sensor=false&v=3.17&sensor=false&libraries=geometry,places" type="text/javascript"></script>
+<?php } else { ?>
+    <script src="<?php echo $protocol;?>://maps.googleapis.com/maps/api/js?sensor=false&v=3.17&sensor=false&libraries=geometry,places" type="text/javascript"></script>
+<?php } ?>
+
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>bpost/shm/infobox.js"></script>
+
